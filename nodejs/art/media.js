@@ -55,7 +55,7 @@ class Media {
     /**
      * @param {number} id
      * @param {number} artId
-     * @param { 'image'|'video'|'html' } type
+     * @param {MediaType} type
      * @param {string} path
      * @param {string} hash
      * @param {number} duration
