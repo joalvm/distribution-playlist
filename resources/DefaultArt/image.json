@@ -1,0 +1,16 @@
+{
+    "id": 410,
+    "media_id": 410,
+    "type": "video",
+    "medias": [
+        {
+            "id": 453,
+            "media_id": 453,
+            "type": "image",
+            "duration": 0,
+            "hash": "b32bef4f9c1b5e3625e7a62ce99630ad",
+            "path": "path/to/default_art/image/image_01.jpg",
+            "position": 1
+        }
+    ]
+}

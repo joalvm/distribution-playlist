@@ -1,0 +1,37 @@
+{
+    "id": 1,
+    "days": {
+        "friday": [
+            {
+                "end": "06:00:00",
+                "start": "23:00:00"
+            }
+        ],
+        "monday": [
+            {
+                "end": "06:00:00",
+                "start": "23:00:00"
+            }
+        ],
+        "tuesday": [
+            {
+                "end": "06:00:00",
+                "start": "23:00:00"
+            }
+        ],
+        "thursday": [
+            {
+                "end": "06:00:00",
+                "start": "23:00:00"
+            }
+        ],
+        "wednesday": [
+            {
+                "end": "06:00:00",
+                "start": "23:00:00"
+            }
+        ]
+    },
+    "name": "Horario Diurno",
+    "enabled": true
+}
