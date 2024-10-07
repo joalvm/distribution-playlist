@@ -4,15 +4,6 @@
     "type": "carousel",
     "medias": [
         {
-            "id": 101,
-            "media_id": 101,
-            "type": "video",
-            "path": "path/to/default_art/carousel/video_carousel_01.mp4",
-            "hash": "91f19cd90a5916379415e9b502c57ec3",
-            "duration": 7,
-            "position": 1
-        },
-        {
             "id": 102,
             "media_id": 102,
             "type": "image",
@@ -22,8 +13,17 @@
             "position": 2
         },
         {
+            "id": 101,
+            "media_id": 101,
+            "type": "video",
+            "path": "path/to/default_art/carousel/video_carousel_01.mp4",
+            "hash": "91f19cd90a5916379415e9b502c57ec3",
+            "duration": 7,
+            "position": 1
+        },
+        {
             "id": 103,
-            "media_id": 11,
+            "media_id": 103,
             "type": "video",
             "path": "path/to/default_art/carousel/image_carousel_01.jpg",
             "hash": "a9e98a6683208968b032899f251e42b0",
