@@ -79,6 +79,19 @@ class Schedule {
     }
 
     /**
+     * Obtiene el dia actual en base a la fecha actual.
+     *
+     * @returns {Day|null}
+     */
+    getCurrentDay() {
+        if (!this.#currentDate) {
+            return null;
+        }
+
+        return this.getDay(this.#currentDate.format('dddd').toLowerCase());
+    }
+
+    /**
      * Establece la zona horaria y la fecha actual.
      *
      * @param {string} date
