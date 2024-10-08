@@ -32,7 +32,7 @@ class Day {
     /**
      * @type {number}
      */
-    #totalSeconds = 0;
+    totalSeconds = 0;
 
     /**
      *
@@ -58,7 +58,7 @@ class Day {
 
             this.#ranges.push({ start: startTime, end: endTime });
 
-            this.#totalSeconds += startTime.diff(endTime, 'second');
+            this.totalSeconds += endTime.diff(startTime, 'second');
         }
     }
 }

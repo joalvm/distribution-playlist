@@ -78,12 +78,9 @@ class Schedule {
      * Establece la zona horaria y la fecha actual.
      *
      * @param {string} date
-     * @param {string} timezone
      */
-    setCurrentDate(date, timezone) {
-        this.#currentDate = dayjs(date).tz(timezone).startOf('day');
-
-        this.#timezone = timezone;
+    setCurrentDate(date) {
+        this.#currentDate = dayjs(date).tz(this.#timezone).startOf('day');
 
         return this;
     }
