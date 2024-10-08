@@ -68,9 +68,13 @@ class Schedule {
     /**
      *
      * @param {DayName} dayName
-     * @returns {Day}
+     * @returns {Day|null}
      */
     getDay(dayName) {
+        if (!this.#daysMap.has(dayName)) {
+            return null;
+        }
+
         return new Day(dayName, this.#daysMap.get(dayName), this.#currentDate, this.#timezone);
     }
 
