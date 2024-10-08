@@ -96,11 +96,7 @@ class Art {
      */
     #handleItems(items) {
         for (let item of this.#sortItems(items)) {
-            const { id: artId, media_id: mediaId, type, path, hash, duration, position } = item;
-
-            const media = new Media(mediaId, artId, type, path, hash, duration, position);
-
-            this.#mediaList.push(media);
+            const media = this.#addMediaToList(item);
 
             this.duration += media.duration;
         }
@@ -109,6 +105,22 @@ class Art {
         if (this.type === 'carousel') {
             this.duration = this.#mediaList[this.#currentCarouselPosition].duration;
         }
+    }
+
+    /**
+     * Agrega una media a la lista de medias.
+     *
+     * @param {Item} item
+     * @returns {Media}
+     */
+    #addMediaToList(item) {
+        const { id: artId, media_id: mediaId, type, path, hash, duration, position } = item;
+
+        const media = new Media(mediaId, artId, type, path, hash, duration, position);
+
+        this.#mediaList.push(media);
+
+        return media;
     }
 
     /**
