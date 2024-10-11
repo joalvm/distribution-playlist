@@ -1,5 +1,7 @@
 {
     "id": 1,
+    "name": "Horario Diurno",
+    "enabled": true,
     "days": {
         "friday": [
             {
@@ -31,7 +33,5 @@
                 "end": "23:00:00"
             }
         ]
-    },
-    "name": "Horario Diurno",
-    "enabled": true
+    }
 }
