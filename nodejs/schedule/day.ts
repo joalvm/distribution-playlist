@@ -6,8 +6,14 @@ import Time from "./time";
  * que representan las horas de trabajo.
  */
 class Day {
+    /**
+     * Lista de rangos de tiempo.
+     */
     private timesList: Time[] = [];
 
+    /**
+     * Total de segundos de todos los rangos de tiempo.
+     */
     private totalSeconds = 0;
 
     constructor(
@@ -18,15 +24,19 @@ class Day {
         this.handleTimes(times);
     }
 
-    getDayName() {
+    public getDayName(): string {
         return this.dayName;
     }
 
-    getTimes() {
+    public getTimes(): Time[] {
         return this.timesList;
     }
 
-    private handleTimes(times: { start: string; end: string }[]) {
+    public isEmpty(): boolean {
+        return this.timesList.length === 0;
+    }
+
+    private handleTimes(times: { start: string; end: string }[]): void {
         for (let time of times) {
             const startTime = this.makeTime(time.start);
             const endTime = this.makeTime(time.end);

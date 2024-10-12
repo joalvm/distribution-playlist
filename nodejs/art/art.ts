@@ -25,23 +25,12 @@ class Art {
      */
     private carouselIndex: number = 0;
 
-    /**
-     *
-     * @param {number} id
-     * @param {number} mediaId
-     * @param {ArtType} type
-     * @param {Item[]} items
-     */
     constructor(
-        public id: number,
-        public mediaId: number,
-        public type: ArtType,
+        public readonly id: number,
+        public readonly mediaId: number,
+        public readonly type: ArtType,
         items: ArtItem[]
     ) {
-        this.id = id;
-        this.mediaId = mediaId;
-        this.type = type;
-
         this.handleItems(items);
     }
 

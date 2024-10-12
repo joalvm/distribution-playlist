@@ -14,12 +14,27 @@ class Schedule
     public array $daysMap = [];
 
     public function __construct(
-        public int $id,
-        public string $name,
-        public bool $enabled,
+        private readonly int $id,
+        private readonly string $name,
+        private readonly bool $enabled,
         array $days,
     ) {
         $this->daysMap = $days;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function isEnabled(): bool
+    {
+        return $this->enabled;
     }
 
     public function hasDay(string $dayName): bool

@@ -1,7 +1,8 @@
 <?php
 
+use App\Art\Art;
+use App\Art\ArtType;
 use App\Schedule\Schedule;
-use Carbon\CarbonImmutable;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -17,6 +18,7 @@ function getJson(string $path): array
 }
 
 $scheduleData = getJson('resources/schedule/simple.json');
+$defaultArtData = getJson('resources/default_art/carousel.json');
 
 $schedule = new Schedule(
     $scheduleData['id'],
@@ -25,4 +27,11 @@ $schedule = new Schedule(
     $scheduleData['days'],
 );
 
-dd($schedule->getDay('monday', CarbonImmutable::parse('2021-10-04')));
+$defaultArt = new Art(
+    $defaultArtData['id'],
+    $defaultArtData['media_id'],
+    ArtType::tryFrom($defaultArtData['type']),
+    $defaultArtData['medias'],
+);
+
+dd($defaultArt->getMedias(), $defaultArt->getMedias());

@@ -14,13 +14,13 @@ class Media {
      * @param {number} position Posición de la media en el carousel.
      */
     constructor(
-        public id: number,
-        public artId: number,
-        public type: MediaType,
-        public path: string,
-        public hash: string,
-        public duration: number,
-        public position: number
+        public readonly id: number,
+        public readonly artId: number,
+        public readonly type: MediaType,
+        public readonly path: string,
+        public readonly hash: string,
+        public readonly duration: number,
+        public readonly position: number
     ) {
         if (this.duration <= 0) {
             this.duration = 10;

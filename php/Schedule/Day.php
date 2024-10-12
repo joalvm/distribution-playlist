@@ -14,6 +14,11 @@ class Day
     private $timesList = [];
 
     /**
+     * Total de segundos de todos los rangos de tiempo.
+     */
+    private $totalSeconds = 0;
+
+    /**
      * Constructor.
      *
      * @param string $name  Nombre del día.
@@ -25,10 +30,15 @@ class Day
         array $times,
     ) {
         foreach ($times as $time) {
+            $start = $this->makeTime($time['start']);
+            $end = $this->makeTime($time['end']);
+
             $this->timesList[] = new Time(
-                start: $this->makeTime($time['start']),
-                end: $this->makeTime($time['end'])
+                start: $start,
+                end: $end,
             );
+
+            $this->totalSeconds += $end->diffInSeconds($start);
         }
     }
 
