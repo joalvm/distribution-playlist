@@ -2,16 +2,22 @@
 
 namespace App\Art;
 
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
 
-class Art
+class Art implements Arrayable
 {
     /**
      * Lista de medias que contiene el arte.
      *
      * @var array<Media>
      */
-    public array $mediasList = [];
+    private array $mediasList = [];
+
+    /**
+     * Cantidad total de medias que contiene el arte.
+     */
+    public int $totalMedias = 0;
 
     /**
      * Duración total del arte.
@@ -33,6 +39,20 @@ class Art
         array $items,
     ) {
         $this->handleItems($items);
+    }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'media_id' => $this->mediaId,
+            'type' => $this->type->value,
+            'duration' => $this->duration,
+            'medias' => array_map(
+                fn (Media $media) => $media->toArray(),
+                $this->mediasList
+            ),
+        ];
     }
 
     public function getMedias(): array
@@ -77,6 +97,8 @@ class Art
             );
 
             $this->mediasList[] = $media;
+
+            ++$this->totalMedias;
 
             $this->duration += $media->duration;
         }

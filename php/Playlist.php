@@ -2,12 +2,11 @@
 
 namespace App;
 
-use Carbon\CarbonImmutable;
+use App\Schedule\Day;
 
 class Playlist
 {
-    public function __construct(
-        public CarbonImmutable $currentDate,
-    ) {
+    public function __construct(private Day $day)
+    {
     }
 }

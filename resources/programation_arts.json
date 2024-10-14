@@ -2,12 +2,11 @@
     {
         "id": 26,
         "campaign_id": 2,
-        "sale_type": "reproductions",
-        "sale_value": 2000,
-        "auto_adjust": true,
+        "reproductions": 1500,
         "start_date": "2024-10-01",
         "finish_date": "2024-10-15",
         "distribution": "immutable",
+        "auto_adjust": true,
         "art": {
             "id": 2,
             "type": "video",
@@ -29,8 +28,7 @@
     {
         "id": 27,
         "campaign_id": 3,
-        "sale_type": "reproductions",
-        "sale_value": 500,
+        "reproductions": 500,
         "auto_adjust": true,
         "start_date": "2024-10-10",
         "finish_date": "2024-10-20",
@@ -76,12 +74,11 @@
     },
     {
         "id": 727,
-        "sale_value": 1000,
+        "reproductions": 340,
         "auto_adjust": true,
         "start_date": "2024-10-15",
         "finish_date": "2024-10-30",
         "distribution": "immutable",
-        "sale_type": "reproductions",
         "campaign_id": 4,
         "arts_id": 3,
         "art": {
@@ -114,8 +111,7 @@
     {
         "id": 28,
         "campaign_id": 5,
-        "sale_type": "reproductions",
-        "sale_value": 1500,
+        "reproductions": 780,
         "auto_adjust": true,
         "start_date": "2024-10-05",
         "finish_date": "2024-10-12",
@@ -141,8 +137,7 @@
     {
         "id": 29,
         "campaign_id": 6,
-        "sale_type": "reproductions",
-        "sale_value": 2500,
+        "reproductions": 1200,
         "auto_adjust": true,
         "start_date": "2024-10-08",
         "finish_date": "2024-10-18",
@@ -168,8 +163,7 @@
     {
         "id": 30,
         "campaign_id": 7,
-        "sale_type": "reproductions",
-        "sale_value": 3000,
+        "reproductions": 1080,
         "auto_adjust": true,
         "start_date": "2024-10-12",
         "finish_date": "2024-10-22",
@@ -214,8 +208,7 @@
     {
         "id": 31,
         "campaign_id": 8,
-        "sale_type": "reproductions",
-        "sale_value": 1800,
+        "reproductions": 480,
         "auto_adjust": true,
         "start_date": "2024-10-15",
         "finish_date": "2024-10-25",
@@ -250,8 +243,7 @@
     {
         "id": 32,
         "campaign_id": 9,
-        "sale_type": "reproductions",
-        "sale_value": 2200,
+        "reproductions": 360,
         "auto_adjust": true,
         "start_date": "2024-10-18",
         "finish_date": "2024-10-28",
@@ -277,8 +269,7 @@
     {
         "id": 33,
         "campaign_id": 10,
-        "sale_type": "reproductions",
-        "sale_value": 2700,
+        "reproductions": 1259,
         "auto_adjust": true,
         "start_date": "2024-10-20",
         "finish_date": "2024-10-30",
@@ -304,8 +295,7 @@
     {
         "id": 34,
         "campaign_id": 11,
-        "sale_type": "reproductions",
-        "sale_value": 3200,
+        "reproductions": 960,
         "auto_adjust": true,
         "start_date": "2024-10-22",
         "finish_date": "2024-10-31",
@@ -350,8 +340,7 @@
     {
         "id": 35,
         "campaign_id": 12,
-        "sale_type": "reproductions",
-        "sale_value": 3500,
+        "reproductions": 360,
         "auto_adjust": true,
         "start_date": "2024-10-25",
         "finish_date": "2024-10-31",
@@ -386,8 +375,7 @@
     {
         "id": 36,
         "campaign_id": 13,
-        "sale_type": "reproductions",
-        "sale_value": 4000,
+        "reproductions": 650,
         "auto_adjust": true,
         "start_date": "2024-10-28",
         "finish_date": "2024-10-31",
@@ -413,8 +401,7 @@
     {
         "id": 37,
         "campaign_id": 14,
-        "sale_type": "reproductions",
-        "sale_value": 4500,
+        "reproductions": 120,
         "auto_adjust": true,
         "start_date": "2024-10-29",
         "finish_date": "2024-10-31",

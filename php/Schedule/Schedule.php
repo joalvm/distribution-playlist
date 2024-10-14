@@ -39,7 +39,7 @@ class Schedule
 
     public function hasDay(string $dayName): bool
     {
-        return isset($this->daysMap[$dayName]);
+        return array_key_exists($dayName, $this->daysMap) and !empty($this->daysMap[$dayName]);
     }
 
     public function getDay(string $dayName, CarbonImmutable $date): Day

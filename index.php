@@ -2,6 +2,8 @@
 
 use App\Art\Art;
 use App\Art\ArtType;
+use App\Generator;
+use App\Programation\Programation;
 use App\Schedule\Schedule;
 
 require __DIR__ . '/vendor/autoload.php';
@@ -19,6 +21,7 @@ function getJson(string $path): array
 
 $scheduleData = getJson('resources/schedule/simple.json');
 $defaultArtData = getJson('resources/default_art/carousel.json');
+$programantionData = getJson('resources/programation_arts.json');
 
 $schedule = new Schedule(
     $scheduleData['id'],
@@ -28,10 +31,23 @@ $schedule = new Schedule(
 );
 
 $defaultArt = new Art(
-    $defaultArtData['id'],
-    $defaultArtData['media_id'],
-    ArtType::tryFrom($defaultArtData['type']),
-    $defaultArtData['medias'],
+    id: $defaultArtData['id'],
+    mediaId: $defaultArtData['media_id'],
+    type: ArtType::tryFrom($defaultArtData['type']),
+    items: $defaultArtData['medias'],
 );
 
-dd($defaultArt->getMedias(), $defaultArt->getMedias());
+$programation = new Programation(
+    artDates: $programantionData,
+    schedule: $schedule,
+);
+
+foreach ($programation->getDates() as $date => $data) {
+    if ('2024-10-30' !== $date) {
+        continue;
+    }
+
+    $generator = new Generator($data['day'], $defaultArt);
+
+    $generator->generate($data['arts']);
+}
