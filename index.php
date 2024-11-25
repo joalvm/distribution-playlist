@@ -1,6 +1,7 @@
 <?php
 
 use App\Components\Art\Art;
+use App\Components\Programation\Programation;
 use App\components\Schedule\Schedule;
 use Carbon\CarbonImmutable;
 
@@ -35,9 +36,7 @@ $defaultArt = Art::factory(getJson('resources/default_art/image.json'));
 //    solo aquellas artes que se deben reproducir en el rango de fechas de inicio y fin.
 // 2. Se debe tener en cuenta que algunas artes tienen un horario de reproducción especifico,
 //    por lo que se debe tomar en cuentas las horas especificas de reproducción y los dias.
-$arts = getJson('resources/programation/simple.json');
-
-dd($arts);
+$programation = Programation::factory(getJson('resources/programation/simple.json'));
 
 foreach ($startDate->daysUntil($endDate) as $date) {
     // Si el dia actual no esta en el horario, entonces no se debe generar playlist.
@@ -45,7 +44,29 @@ foreach ($startDate->daysUntil($endDate) as $date) {
         continue;
     }
 
+    // Información del dia.
     $day = $schedule->getDay($date);
 
-    // Obtener programación.
+    // Artes del dia en el iterador.
+    $programmedArts = $programation->getForDay($date);
+    $totalSeconds = 0;
+
+    foreach ($programmedArts as $programmedArt) {
+        $programmedArt->calculateDistribuction($day);
+
+        $totalSeconds += $programmedArt->usedSeconds();
+        dd($programmedArt, $totalSeconds);
+    }
 }
+
+// Nota: el resultado final debe ser un archivo csv con la programación de las artes en base a su total de reproducciones,
+//       el archivo contiene los tiempos exactos en los que cada arte se debe reproducir. El formato es el siguiente:
+//         - Id del arte.
+//         - Tipo de arte. (solo videos, imagenes o html)(La artes de tipo secuencia y carousel se deben desglosar en sus partes).
+//         - Duración de la reproducción.
+//         - Tiempo de inicio de reproducción. (formato: H:i:s)
+//         - Tipo de distribución.
+//      el nombre de archivo debe tener la siguiente estructura: "year/month/day/playlist_{year}{month}{day}.csv"
+// Ejemplo:
+// 1,video,30,00:00:00,immutable
+// 2,image,10,00:00:30,immutable
