@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Art;
+namespace App\Components\art;
 
+use App\Enums\ArtType;
 use Illuminate\Contracts\Support\Arrayable;
 
-class Media implements Arrayable
+class Item implements Arrayable
 {
     public function __construct(
         public readonly int $id,
-        public readonly int $artId,
-        public readonly MediaType $type,
+        public readonly ArtType $type,
         public readonly string $path,
-        public readonly string $hash,
         public readonly int $duration,
-        public readonly int $position,
+        public readonly ?int $position = null,
     ) {
     }
 
@@ -21,10 +20,8 @@ class Media implements Arrayable
     {
         return [
             'id' => $this->id,
-            'art_id' => $this->artId,
             'type' => $this->type->value,
             'path' => $this->path,
-            'hash' => $this->hash,
             'duration' => $this->duration,
             'position' => $this->position,
         ];

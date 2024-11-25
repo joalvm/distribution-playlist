@@ -1,32 +1,25 @@
 {
     "id": 230,
-    "media_id": 230,
     "type": "sequence",
-    "medias": [
+    "items": [
         {
             "id": 50,
-            "media_id": 50,
             "type": "image",
-            "path": "path/to/default_art/sequence/image_sequence_01.jpg",
-            "hash": "e73b112c3a6fa19561f955dd3de119ec",
-            "duration": 0,
+            "path": "path/to/default_art/sequence/image_12.jpg",
+            "duration": 10,
             "position": 1
         },
         {
             "id": 51,
-            "media_id": 51,
             "type": "image",
-            "path": "path/to/default_art/sequence/image_sequence_02.png",
-            "hash": "f382a3adb7fac9cc6ec201312281b91d",
-            "duration": 0,
+            "path": "path/to/default_art/sequence/image_13.png",
+            "duration": 9,
             "position": 2
         },
         {
             "id": 52,
-            "media_id": 52,
             "type": "video",
-            "path": "path/to/default_art/sequence/video_sequence_01.jpg",
-            "hash": "f7117bfab2e25eb30e71ccc03c451391",
+            "path": "path/to/default_art/sequence/video_9.jpg",
             "duration": 12,
             "position": 3
         }

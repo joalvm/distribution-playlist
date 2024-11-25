@@ -1,33 +1,26 @@
 {
     "id": 120,
-    "media_id": 120,
     "type": "carousel",
-    "medias": [
+    "items": [
         {
             "id": 102,
-            "media_id": 102,
             "type": "image",
-            "path": "path/to/default_art/carousel/video_carousel_02.mp4",
-            "hash": "b7ac589e1554c4a4bc0a5b812e4a55e9",
+            "path": "path/to/default_art/carousel/video_2.mp4",
             "duration": 11,
             "position": 2
         },
         {
             "id": 101,
-            "media_id": 101,
             "type": "video",
-            "path": "path/to/default_art/carousel/video_carousel_01.mp4",
-            "hash": "91f19cd90a5916379415e9b502c57ec3",
+            "path": "path/to/default_art/carousel/video_3.mp4",
             "duration": 7,
             "position": 1
         },
         {
             "id": 103,
-            "media_id": 103,
             "type": "video",
-            "path": "path/to/default_art/carousel/image_carousel_01.jpg",
-            "hash": "a9e98a6683208968b032899f251e42b0",
-            "duration": 0,
+            "path": "path/to/default_art/carousel/image_8.jpg",
+            "duration": 12,
             "position": 3
         }
     ]

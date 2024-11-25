@@ -1,0 +1,40 @@
+[
+    {
+        "start_date": "2024-11-25",
+        "finish_date": "2024-12-28",
+        "art": {
+            "id": 2,
+            "type": "video",
+            "path": "path/to/video_2.mp4",
+            "duration": 11,
+            "total_reproductions": 140,
+            "distribution_type": "immutable"
+        },
+        "custom_schedule": null
+    },
+    {
+        "start_date": "2024-11-27",
+        "finish_date": "2024-11-30",
+        "art": {
+            "id": 9,
+            "type": "image",
+            "path": "path/to/image_1.jpg",
+            "duration": 11,
+            "total_reproductions": 200,
+            "distribution_type": "immutable"
+        },
+        "custom_schedule": [
+            {
+                "start_time": "16:00:00",
+                "finish_time": "22:00:00",
+                "days": [
+                    "monday",
+                    "tuesday",
+                    "wednesday",
+                    "thursday",
+                    "friday"
+                ]
+            }
+        ]
+    }
+]

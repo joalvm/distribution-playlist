@@ -1,16 +1,6 @@
 {
     "id": 310,
-    "media_id": 310,
     "type": "video",
-    "medias": [
-        {
-            "id": 345,
-            "media_id": 345,
-            "type": "video",
-            "duration": 12,
-            "hash": "1155fc884901b684d85cb5bdce3617bd",
-            "path": "path/to/default_art/video/video_01.mp4",
-            "position": 1
-        }
-    ]
+    "duration": 11,
+    "path": "path/to/default_art/video_01.mp4"
 }

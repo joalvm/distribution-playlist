@@ -2,9 +2,8 @@
 
 namespace App;
 
-use App\Art\Art;
-use App\Programation\Date;
-use App\Schedule\Day;
+use App\Components\art\Art;
+use App\Components\Schedule\Day;
 
 /**
  * Clase encargada de generar y distribuir las artes en las playlist DOOH.
@@ -20,18 +19,17 @@ class Generator
         public readonly Day $day,
         public readonly Art $defaultArt,
     ) {
-        $this->playlist = new Playlist($day);
+        $this->playlist = new Playlist($day->seconds());
     }
 
     /**
      * Genera las playlist de las artes programadas.
      *
-     * @param array<Date> $dates
+     * @param array<Art> $arts
      *
      * @return void
      */
-    public function generate(array $dates)
+    public function generate(array $arts)
     {
-        dd(array_map(fn (Date $date) => $date->toArray(), $dates));
     }
 }
