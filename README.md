@@ -124,9 +124,9 @@ interface CustomSchedule {
 El sistema genera un archivo `CSV` con el siguiente formato:
 
 ```csv
-unit_id,art_id,start_time,end_time,duration
-1,101,2024-12-07T08:00:00,2024-12-07T08:00:10,10
-1,102,2024-12-07T08:00:10,2024-12-07T08:00:20,10
+art_id,type,duration,start_time,distribution
+1,video,30,00:00:00,immutable
+2,image,10,00:00:30,immutable
 ...
 ```
 
