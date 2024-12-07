@@ -1,7 +1,7 @@
 [
     {
-        "start_date": "2024-11-25",
-        "finish_date": "2024-12-28",
+        "start_date": "2024-12-06",
+        "finish_date": "2024-12-11",
         "art": {
             "id": 2,
             "type": "video",
@@ -13,8 +13,8 @@
         "custom_schedule": null
     },
     {
-        "start_date": "2024-11-27",
-        "finish_date": "2024-11-30",
+        "start_date": "2024-12-08",
+        "finish_date": "2024-12-13",
         "art": {
             "id": 9,
             "type": "image",
@@ -25,14 +25,16 @@
         },
         "custom_schedule": [
             {
-                "start_time": "16:00:00",
+                "start_time": "10:00:00",
                 "finish_time": "22:00:00",
                 "days": [
                     "monday",
                     "tuesday",
                     "wednesday",
                     "thursday",
-                    "friday"
+                    "friday",
+                    "saturday",
+                    "sunday"
                 ]
             }
         ]

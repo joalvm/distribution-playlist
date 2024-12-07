@@ -28,6 +28,24 @@ class Range implements Arrayable
         ];
     }
 
+    /**
+     * Verifica si el rango actual se solapa con otro rango.
+     */
+    public function overlapsWith(Range $range): bool
+    {
+        return $this->start()->between($range->start(), $range->end())
+            or $this->end()->between($range->start(), $range->end());
+    }
+
+    /**
+     * Verifica si el rango actual está dentro de otro rango.
+     */
+    public function isInsideOf(Range $range): bool
+    {
+        return $this->start()->greaterThanOrEqualTo($range->start())
+            and $this->end()->lessThanOrEqualTo($range->end());
+    }
+
     public function start(): CarbonImmutable
     {
         return $this->startTime;

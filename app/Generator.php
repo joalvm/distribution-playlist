@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Components\art\Art;
+use App\Components\Programation\ProgrammedArt;
 use App\Components\Schedule\Day;
 
 /**
@@ -25,11 +26,13 @@ class Generator
     /**
      * Genera las playlist de las artes programadas.
      *
-     * @param array<Art> $arts
+     * @param array<ProgrammedArt> $arts
      *
      * @return void
      */
-    public function generate(array $arts)
+    public function run(array $arts)
     {
+        dd($arts);
+        // Iniciamos la información de la playlist.
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Components\Programation;
 
+use App\Components\Schedule\Day;
 use Carbon\CarbonImmutable;
 
 class Programation
@@ -26,16 +27,24 @@ class Programation
      *
      * @return array<ProgrammedArt>
      */
-    public function getForDay(CarbonImmutable $date): array
+    public function getArtsForDay(Day $day): array
     {
         $arts = [];
 
         foreach ($this->programationList as $prog) {
-            if (!$date->between($prog['start_date'], $prog['finish_date'])) {
+            if (!$day->date->between($prog['start_date'], $prog['finish_date'])) {
                 continue;
             }
 
-            $arts[] = ProgrammedArt::factory($prog);
+            $programmedArt = ProgrammedArt::factory($prog);
+
+            if (!$programmedArt->isScheduledFor($day->date)) {
+                continue;
+            }
+
+            $programmedArt->calculateDistribution($day);
+
+            $arts[] = $programmedArt;
         }
 
         return $arts;
